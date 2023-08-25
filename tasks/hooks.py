@@ -129,23 +129,28 @@ app_license = "MIT"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-#	"all": [
-#		"tasks.tasks.all"
-#	],
-#	"daily": [
-#		"tasks.tasks.daily"
-#	],
-#	"hourly": [
-#		"tasks.tasks.hourly"
-#	],
-#	"weekly": [
-#		"tasks.tasks.weekly"
-#	],
-#	"monthly": [
-#		"tasks.tasks.monthly"
-#	],
-# }
+scheduler_events = {
+    
+	"cron": {
+        "0 15 * * * ": [ "tasks.controller.todo_cronjob.create_todo" ]
+	},
+	# "all": [
+	# 	"soft.tasks.all"
+	# ],
+	# "daily": [
+	# 	"soft.tasks.daily"
+	# ],
+	# "hourly": [
+	# 	"soft.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"soft.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"soft.tasks.monthly"
+	# ],
+}
+
 
 # Testing
 # -------
